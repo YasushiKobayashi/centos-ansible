@@ -1,0 +1,15 @@
+sudo: required
+services:
+  - docker
+
+before_script:
+  - echo 'Canada/Pacific' | sudo tee /etc/timezone
+  - sudo dpkg-reconfigure --frontend noninteractive tzdata
+  - docker pull centos:6
+
+script:
+  - docker build .
+
+notifications:
+  slack:
+    secure: P87RU2t3swTUNdmeAurpAb8uN+yEa0tVu/ArOkdnNopKxafEDEAazc0i0wqStiOJLrQ0ggRG4XLf8g50mHTnVeqqa7gauIdKQfEX/q3OPEMzq6/horWWgmBwMPcuR6TZyEuu3T8P7YiEepsuR9pLlCCiqGt2WbSHPbZC/HQWtGOoYbk1yQKotJEvfSTnitAdL8rjswjocdJeUnJnJrdXZVcqK+ngA/pKjsPu7AUpzHpKOW7sXxJwdOO0egAMNpAoyQmdQuMJvIWOGpINJdg0Rs3vIjJaB8tq7LCtbFWihQg9rp3i1M/GL5gQS24rqhkzYtZnkFmSIQbFx0DyEMhKQxrqjI+PAa2hem6e6UQqIixgtxvZX9cmR6mkWgrCuGEghr06die710+xqESLW1stq12c8U2opaF7nKMxCMvnpxYBNhmgrO0dzRexBHkwgsUzfRKMlRlbzP8O8zh9rqoKA+ZuP3K88TqFcRTcth027LrXuihXwkNda2oZLObmtgkYQ9mBh+ZI/KSg/uIVBjir2vCIeB1kd1BZhyi+JiwnMqJDh750bZCDqZYQ3dZW2U9mv7JyGexfM3tp/QIOFrZmsh8xp9x/c+S0rN1CToARCCS0cO4zX3eJ8sMEWbHo8EJBMLmCkNNlSk0pX4SWMvAx8jBj2IOz1wXaN+5bNn5dy14=

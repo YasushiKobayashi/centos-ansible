@@ -1,0 +1,3 @@
+- base image is centos6
+- `docker pull ptpadan1246/centos-ansible`
+- https://hub.docker.com/r/ptpadan1246/centos-ansible/
